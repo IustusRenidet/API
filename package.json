@@ -1,0 +1,16 @@
+{
+  "name": "aspel-sae-consulta",
+  "version": "1.0.0",
+  "description": "Aplicación para consultar base de datos Aspel SAE",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["aspel", "sae", "firebird"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-firebird": "^1.1.8"
+  }
+}
