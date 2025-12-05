@@ -8,8 +8,8 @@ const PORT = 3000;
 // Configuración de la base de datos
 const dbConfig = {
     host: 'localhost',
-    port: 3050,
-    database: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\SAE9.00\\Empresa26\\Datos\\SAE90EMPRE26.FDB',
+    port: 13150,
+    database: 'C:\\Program Files (x86)\\Common Files\\Aspel\\Sistemas Aspel\\COI10.00\\Datos\\Empresa1\\COI10EMPRE1.FDB',
     user: 'SYSDBA',
     password: 'masterkey',
     lowercase_keys: false,
@@ -21,7 +21,7 @@ const dbConfig = {
 app.use(express.static('public'));
 
 // Ruta para obtener los datos
-app.get('/api/compc', (req, res) => {
+app.get('/api/saldos', (req, res) => {
     Firebird.attach(dbConfig, (err, db) => {
         if (err) {
             console.error('Error de conexión:', err);
@@ -31,7 +31,7 @@ app.get('/api/compc', (req, res) => {
             });
         }
 
-        const query = 'SELECT CVE_DOC, STATUS, IMPORTE, DOC_ANT, DOC_SIG FROM COMPC26';
+        const query = 'SELECT NUM_CTA, NOMBRE, ABONO01, CARGO01, ABONO02 FROM SALDOS25';
 
         db.query(query, [], (err, result) => {
             if (err) {
